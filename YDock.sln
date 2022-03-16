@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDockTest", "YDockTest\YDockTest.csproj", "{F1FC154A-40C9-4C4A-BC00-3CFBD4A2768E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YDockTest", "YDockTest\YDockTest.csproj", "{F1FC154A-40C9-4C4A-BC00-3CFBD4A2768E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDock", "YDock\YDock.csproj", "{2BD226E4-B931-4B46-A6C3-D15270AD0565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YDock", "YDock\YDock.csproj", "{2BD226E4-B931-4B46-A6C3-D15270AD0565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F07E77DB-1DEA-4AAE-B285-36B22C69D32E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

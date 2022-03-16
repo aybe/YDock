@@ -1,0 +1,10 @@
+[*.cs]
+dotnet_remove_unnecessary_suppression_exclusions = category: ReSharper
+
+# ReSharper properties
+resharper_blank_lines_after_control_transfer_statements = 1
+resharper_blank_lines_around_single_line_auto_property = 1
+resharper_blank_lines_before_block_statements = 1
+resharper_blank_lines_before_control_transfer_statements = 1
+resharper_csharp_blank_lines_around_single_line_field = 1
+resharper_place_simple_embedded_statement_on_same_line = false
