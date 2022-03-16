@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Layouts>
+  <Layout Name="MainWindow">
+    <ActiveItem>0</ActiveItem>
+    <Elements>
+      <Item ID="0" DesiredWidth="638.6666666666666" DesiredHeight="614.3333333333334" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="1" DesiredWidth="638.6666666666666" DesiredHeight="614.3333333333334" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="2" DesiredWidth="319.3333333333333" DesiredHeight="307.1666666666667" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="3" DesiredWidth="638.6666666666666" DesiredHeight="304" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="4" DesiredWidth="300" DesiredHeight="303.556224533236" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="5" DesiredWidth="300" DesiredHeight="304.77710880009744" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="6" DesiredWidth="944.5834727726404" DesiredHeight="300" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="7" DesiredWidth="944.7498605606929" DesiredHeight="300" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="8" DesiredWidth="300" DesiredHeight="304.77710880009744" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="9" DesiredWidth="300" DesiredHeight="303.556224533236" FloatLeft="0" FloatTop="0" CanSelect="true" />
+      <Item ID="10" DesiredWidth="944.7498605606929" DesiredHeight="300" FloatLeft="1043.3333333333333" FloatTop="1207.3333333333333" CanSelect="true" />
+      <Item ID="11" DesiredWidth="944.5834727726404" DesiredHeight="300.3333333333333" FloatLeft="0" FloatTop="0" CanSelect="true" />
+    </Elements>
+    <ToolBar>
+      <LeftBar />
+      <TopBar />
+      <RightBar />
+      <BottomBar />
+    </ToolBar>
+    <Panel IsDocument="false" Side="None" Direction="Vertical">
+      <Panel IsDocument="false" Side="Top" Direction="Horizontal">
+        <Group IsDocument="false" Side="Top">
+          <Item>6</Item>
+        </Group>
+        <Group IsDocument="false" Side="Top">
+          <Item>7</Item>
+        </Group>
+      </Panel>
+      <Panel IsDocument="false" Side="None" Direction="Horizontal">
+        <Panel IsDocument="false" Side="Left" Direction="Vertical">
+          <Group IsDocument="false" Side="Left">
+            <Item>4</Item>
+          </Group>
+          <Group IsDocument="false" Side="Left">
+            <Item>5</Item>
+          </Group>
+        </Panel>
+        <Panel IsDocument="true" Side="None" Direction="Horizontal">
+          <Group IsDocument="true" Side="None">
+            <Item>1</Item>
+            <Item>0</Item>
+          </Group>
+          <Group IsDocument="true" Side="None">
+            <Item>3</Item>
+            <Item>2</Item>
+          </Group>
+        </Panel>
+        <Panel IsDocument="false" Side="Right" Direction="Vertical">
+          <Group IsDocument="false" Side="Right">
+            <Item>8</Item>
+          </Group>
+          <Group IsDocument="false" Side="Right">
+            <Item>9</Item>
+          </Group>
+        </Panel>
+      </Panel>
+      <Panel IsDocument="false" Side="Bottom" Direction="Horizontal">
+        <Group IsDocument="false" Side="Bottom">
+          <Item>10</Item>
+        </Group>
+        <Group IsDocument="false" Side="Bottom">
+          <Item>11</Item>
+        </Group>
+      </Panel>
+    </Panel>
+    <FloatWindows />
+  </Layout>
+</Layouts>

@@ -82,10 +82,15 @@ public partial class MainWindow
 
     private bool TryLoadLayout()
     {
-        if (!File.Exists(LayoutPath))
+        var path = LayoutPath;
+
+        if (!File.Exists(path))
+            path = "DefaultLayout.xml";
+
+        if (!File.Exists(path))
             return false;
 
-        var text = File.ReadAllText(LayoutPath);
+        var text = File.ReadAllText(path);
 
         var document = XDocument.Parse(text);
 

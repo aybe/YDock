@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DefaultLayout.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DefaultLayout.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\YDock\YDock.csproj" />
   </ItemGroup>
 
