@@ -2,7 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Windows;
+using System.Windows.Media;
 using System.Xml.Linq;
+using YDock;
 using YDock.Enum;
 using YDock.LayoutSetting;
 
@@ -21,10 +23,18 @@ public partial class MainWindow
     {
         InitializeComponent();
 
-        Document1 = new SampleDocument("Document 1");
-        Document2 = new SampleDocument("Document 2");
-        Document3 = new SampleDocument("Document 3");
-        Document4 = new SampleDocument("Document 4");
+        var icon = new ImageSourceConverter().ConvertFrom(Properties.Resources.Toolbox) as ImageSource ?? throw null!;
+
+        Document1 = new SampleDocument("Document 1") { Icon = icon };
+        Document2 = new SampleDocument("Document 2") { Icon = icon };
+        Document3 = new SampleDocument("Document 3") { Icon = icon };
+        Document4 = new SampleDocument("Document 4") { Icon = icon };
+
+        Document1.SetValue(DockManager.DockImageSourceProperty, icon);
+        Document2.SetValue(DockManager.DockImageSourceProperty, icon);
+        Document3.SetValue(DockManager.DockImageSourceProperty, icon);
+        Document4.SetValue(DockManager.DockImageSourceProperty, icon);
+        DockManager.DockImageSource = icon;
 
         LeftTool1 = new SampleDocument("Left Tool 1");
         LeftTool2 = new SampleDocument("Left Tool 2");

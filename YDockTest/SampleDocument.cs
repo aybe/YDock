@@ -16,5 +16,5 @@ public class SampleDocument : TextBlock, IDockSource
 
     public string Header { get; }
 
-    public ImageSource Icon { get; } = null!;
+    public ImageSource Icon { get; init; } = null!;
 }
