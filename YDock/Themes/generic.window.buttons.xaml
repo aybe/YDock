@@ -5,91 +5,94 @@
         <ResourceDictionary Source="pack://application:,,,/YDock;component/Themes/generic.colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="VerticalAlignment" Value="Top"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
-        <Setter Property="Background" Value="{StaticResource DisActiveHeaderBackground}"/>
-        <Setter Property="Height" Value="20"/>
-        <Setter Property="Width" Value="24"/>
-        <Setter Property="IsTabStop" Value="False"/>
+    <Style x:Key="WindowButtonBaseStyle" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Background" Value="{StaticResource DisActiveHeaderBackground}" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Width" Value="24" />
+        <Setter Property="IsTabStop" Value="False" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="White"/>
-                <Setter Property="Foreground" Value="{StaticResource ActiveHeaderBackground}"/>
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Foreground" Value="{StaticResource ActiveHeaderBackground}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True"/>
-                    <Condition Property="IsPressed" Value="True"/>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter Property="Background" Value="{StaticResource ActiveHeaderBackground}"/>
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="{StaticResource ActiveHeaderBackground}" />
+                    <Setter Property="Foreground" Value="White" />
                 </MultiTrigger.Setters>
             </MultiTrigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Window_Close" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}">
+    <Style x:Key="WindowButtonBaseStyleGrid" TargetType="Grid">
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background"
+                Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
+    </Style>
+
+    <Style x:Key="WindowButtonBaseStyleTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground"
+                Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}" />
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="Window_Close" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid SnapsToDevicePixels="True" Background="{TemplateBinding Background}" ToolTip="{global:Resource Key=Close}">
-                        <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                              Data="M2,1 L6,5 L10,1 L11,2 L7,6 L11,10 L10,11 L6,7 L2,11 L1,10 L5,6 L1,2 Z"
-                              Width="12" Height="12" UseLayoutRounding="True"
-                              Fill="{TemplateBinding Foreground}"/>
+                <ControlTemplate>
+                    <Grid Style="{StaticResource WindowButtonBaseStyleGrid}" ToolTip="{global:Resource Key=Close}">
+                        <TextBlock Style="{StaticResource WindowButtonBaseStyleTextBlock}" Text="&#xE8BB;" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Restore" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}">
+    <Style x:Key="Window_Restore" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid SnapsToDevicePixels="True" ToolTip="{global:Resource Key=Restore}" Background="{TemplateBinding Background}">
-                        <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                              Data="M1,5 L1,11 L8,11 L8,5 Z M4,2 L4,3 L9,3 L9,8 L11,8 L11,2 Z M3,0 L12,0 L12,9 L9,9 L9,12 L0,12 L0,3 L3,3 Z"
-                              Width="12" Height="12" UseLayoutRounding="True"
-                              Fill="{TemplateBinding Foreground}"/>
+                <ControlTemplate>
+                    <Grid Style="{StaticResource WindowButtonBaseStyleGrid}" ToolTip="{global:Resource Key=Restore}">
+                        <TextBlock Style="{StaticResource WindowButtonBaseStyleTextBlock}" Text="&#xE923;" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Maximize" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}">
+    <Style x:Key="Window_Maximize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid SnapsToDevicePixels="True" ToolTip="{global:Resource Key=Maximize}" Background="{TemplateBinding Background}">
-                        <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                              Data="M1,4 L1,11 L11,11 L11,4 Z M0,1 L12,1 L12,12 L0,12 Z"
-                              Width="12" Height="12" UseLayoutRounding="True"
-                              Fill="{TemplateBinding Foreground}"/>
+                <ControlTemplate>
+                    <Grid Style="{StaticResource WindowButtonBaseStyleGrid}" ToolTip="{global:Resource Key=Maximize}">
+                        <TextBlock Style="{StaticResource WindowButtonBaseStyleTextBlock}" Text="&#xE922;" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Minimize" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}">
+    <Style x:Key="Window_Minimize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid SnapsToDevicePixels="True" ToolTip="{global:Resource Key=Minimize}" Background="{TemplateBinding Background}">
-                        <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                              Data="M0,5 L12,5 L12,7 L0,7 Z"
-                              Width="12" Height="12" UseLayoutRounding="True"
-                              Fill="{TemplateBinding Foreground}"/>
+                <ControlTemplate>
+                    <Grid Style="{StaticResource WindowButtonBaseStyleGrid}" ToolTip="{global:Resource Key=Minimize}">
+                        <TextBlock Style="{StaticResource WindowButtonBaseStyleTextBlock}" Text="&#xE921;" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
 
 </ResourceDictionary>
