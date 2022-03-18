@@ -47,7 +47,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
-    <Style x:Key="Window_Close" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
+    <Style x:Key="WindowButtonClose" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -59,7 +59,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Restore" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
+    <Style x:Key="WindowButtonRestore" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -71,7 +71,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Maximize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
+    <Style x:Key="WindowButtonMaximize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -83,7 +83,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Window_Minimize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
+    <Style x:Key="WindowButtonMinimize" TargetType="Button" BasedOn="{StaticResource WindowButtonBaseStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
