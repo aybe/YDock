@@ -7,6 +7,9 @@
                     xmlns:command="clr-namespace:YDock.Commands"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:Global="clr-namespace:YDock.Global">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="YDock;component/Themes/generic.colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <enum:DockSide x:Key="Top">Top</enum:DockSide>
     <enum:DockSide x:Key="Right">Right</enum:DockSide>
 
@@ -16,15 +19,6 @@
     <converters:DockModeToVisibilityConverter x:Key="DockModeToVisibilityConverter"/>
     <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
-    <SolidColorBrush x:Key="WindowBackground" Color="#FFEEEEF2"/>
-    <SolidColorBrush x:Key="MouseOnBackground" Color="#FF1C97EA"/>
-    <SolidColorBrush x:Key="SelectedBackground" Color="#FFD4D4D4"/>
-    <SolidColorBrush x:Key="BorderBrush" Color="#FFCCCEDB"/>
-    <SolidColorBrush x:Key="WindowBorderBrush" Color="#FF9B9FB9"/>
-    <SolidColorBrush x:Key="ActiveHeaderBackground" Color="#FF007ACC"/>
-    <SolidColorBrush x:Key="DisActiveHeaderBackground" Color="#FFEEEEF2"/>
-    <SolidColorBrush x:Key="AnchorPanelBackground" Color="#FFEEEEF2"/>
-    <SolidColorBrush x:Key="ActivePanelItemBackground" Color="#FFC9DEF5"/>
 
     <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="VerticalAlignment" Value="Top"/>
