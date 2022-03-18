@@ -933,11 +933,21 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
                         <Grid SnapsToDevicePixels="True">
+                            <Grid.Resources>
+                                <converters:AddDoublesConverter x:Key="AddDoublesConverter" x:Shared="True" />
+                            </Grid.Resources>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <DockPanel x:Name="PART_Header" Height="32">
+                            <DockPanel x:Name="PART_Header">
+                                <DockPanel.Height>
+                                    <MultiBinding Converter="{StaticResource AddDoublesConverter}">
+                                        <!--https://stackoverflow.com/a/6032318/361899-->
+                                        <Binding Source="{x:Static SystemParameters.WindowCaptionHeight}" />
+                                        <Binding Source="{x:Static SystemParameters.ResizeFrameHorizontalBorderHeight}" />
+                                    </MultiBinding>
+                                </DockPanel.Height>
                                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
                                     <Button VerticalAlignment="Center" Margin="7,0,5,0" Content="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=DockManager.DockImageSource}"
                                             Height="{x:Static SystemParameters.SmallIconHeight}"
@@ -953,11 +963,21 @@
                                     <!--<Image Source="{Binding RelativeSource={RelativeSource TemplatedParent},Path=DockManager.DockImageSource}"/>-->
                                     <TextBlock x:Name="Title" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="12" TextTrimming="CharacterEllipsis" Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=DockManager.DockTitle}"/>
                                 </StackPanel>
-                                <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Orientation="Horizontal">
-                                    <Button Height="24" Style="{StaticResource WindowButtonMinimize}" Command="{x:Static command:GlobalCommands.MinimizeCommand}"/>
-                                    <Button x:Name="Maximize_Btn" Height="24" Style="{StaticResource WindowButtonMaximize}" Command="{x:Static command:GlobalCommands.MaximizeCommand}"/>
-                                    <Button x:Name="Restore_Btn" Height="24" Visibility="Collapsed" Style="{StaticResource WindowButtonRestore}" Command="{x:Static command:GlobalCommands.RestoreCommand}"/>
-                                    <Button Height="24" Style="{StaticResource WindowButtonClose}" Command="{x:Static command:GlobalCommands.CloseCommand}"/>
+                                <StackPanel DockPanel.Dock="Right"
+                                            Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                    <Button x:Name="MinimizeButton"
+                                            Style="{StaticResource WindowButtonMinimize}"
+                                            Command="{x:Static command:GlobalCommands.MinimizeCommand}" />
+                                    <Button x:Name="MaximizeButton"
+                                            Style="{StaticResource WindowButtonMaximize}"
+                                            Command="{x:Static command:GlobalCommands.MaximizeCommand}" />
+                                    <Button x:Name="RestoreButton"
+                                            Style="{StaticResource WindowButtonRestore}"
+                                            Command="{x:Static command:GlobalCommands.RestoreCommand}"
+                                            Visibility="Collapsed" />
+                                    <Button x:Name="CloseButton"
+                                            Style="{StaticResource WindowButtonClose}"
+                                            Command="{x:Static command:GlobalCommands.CloseCommand}" />
                                 </StackPanel>
                             </DockPanel>
                             <AdornerDecorator Grid.Row="1">
@@ -969,8 +989,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
-                            <Setter TargetName="Maximize_Btn" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="Restore_Btn" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="MaximizeButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="RestoreButton" Property="Visibility" Value="Visible"/>
                             <Setter Property="Padding" Value="6"/>
                         </Trigger>
                         <Trigger Property="IsActive" Value="False">

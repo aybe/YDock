@@ -6,12 +6,11 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="WindowButtonBaseStyle" TargetType="Button">
-        <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="{StaticResource DisActiveHeaderBackground}" />
-        <Setter Property="Height" Value="20" />
-        <Setter Property="Width" Value="24" />
+        <Setter Property="Width" Value="{x:Static SystemParameters.WindowCaptionButtonWidth}" />
+        <Setter Property="Height" Value="{x:Static SystemParameters.WindowCaptionButtonHeight}" />
         <Setter Property="IsTabStop" Value="False" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
