@@ -146,7 +146,7 @@
             </Trigger>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="{StaticResource ActiveHeaderBackground}"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="{StaticResource ActiveHeaderForeground}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -514,7 +514,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsActive}" Value="True">
-                            <Setter TargetName="HeaderTextBlock" Property="Foreground" Value="White"/>
+                            <Setter TargetName="HeaderTextBlock" Property="Foreground" Value="{StaticResource ActiveHeaderForeground}"/>
                             <Setter Property="Background" Value="{StaticResource ActiveHeaderBackground}"/>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
@@ -631,7 +631,7 @@
             </Trigger>
             <DataTrigger Binding="{Binding IsActive}" Value="True">
                 <Setter Property="Background" Value="{StaticResource ActiveHeaderBackground}"/>
-                <Setter TargetName="title" Property="Foreground" Value="White"/>
+                <Setter TargetName="title" Property="Foreground" Value="{StaticResource ActiveHeaderForeground}"/>
             </DataTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -829,7 +829,7 @@
                         </MultiTrigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Foreground" Value="{StaticResource ActiveHeaderBackground}"/>
-                            <Setter Property="Background" Value="WhiteSmoke"/>
+                            <Setter Property="Background" Value="{StaticResource ActiveHeaderForeground}"/>
                             <Setter Property="BorderThickness" Value="1,0,1,1"/>
                             <Setter Property="Margin" Value="0,-1,0,0"/>
                         </Trigger>
